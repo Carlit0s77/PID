@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Home</h1>
+{% endblock  %}
+
+{% block content1 %}
+    <p class="lead">Este sistema está dedicado a la gestión de arrendatarios. bla, bla, bla</p>
+    <p class="lead">
+        <a href="{% url 'arrendatarios' %}"
+           class="btn btn-lg btn-secondary fw-bold border-white bg-white">Arrendatarios</a>
+    </p>
+{% endblock  %}

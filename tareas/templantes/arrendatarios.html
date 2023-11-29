@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Arrendatarios</h1>
+{% endblock content %}
+{% block content1 %}
+    {% if arrendatarios %}
+        <div class="list-group w-auto my-4">
+            {% for arrendatario in arrendatarios %}
+                <a href="{% url 'arrendatario_detalle' arrendatario.id %}"
+                   class="list-group-item list-group-item-action d-flex gap-3 py-3"
+                   aria-current="true">
+                    <div class="w-100">
+                        <div>
+                            <p class="h5 mb-0">{{ arrendatario.nombre }}  {{ arrendatario.apellido }}</p>
+                            <p class="mb-0">{{ arrendatario.lugar_arrendar }}</p>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h2>No hay registrado ningun arrendatario</h2>
+    {% endif %}
+    <p class="lead">
+        <a href="{% url 'crear_arrendatario' %}"
+           class="btn btn-lg btn-secondary fw-bold border-white bg-white">Crear Arrendatario</a>
+    </p>
+{% endblock content1 %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1>Crear Arrendatario</h1>
+{% endblock  %}
+
+{% block content1 %}
+<form method = "POST">
+    {% csrf_token %}
+
+    {{ form|crispy }}
+
+    {{ error }}
+    <button class="btn btn-success" type="submit">
+        Save
+    </button>
+</form>
+{% endblock  %}

@@ -1,0 +1,18 @@
+
+
+
+<form method='POST'>
+    {% csrf_token %}
+        {{form.as_p}}
+    
+    <button>
+        Update
+    </button>
+    
+    </form> 
+    <form action="{% url 'delete_tarea' tarea.id %}" method='POST'>
+        {% csrf_token %}
+        <button>
+            Delete
+        </button>
+    </form>
